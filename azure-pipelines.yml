@@ -65,13 +65,13 @@ stages:
               action: createSecret
               secretName: $(imagePullSecret)
               dockerRegistryEndpoint: 'Container Registry Connection'
-              kubernetesServiceConnection: 'Kubernetes Cluster Connection'
+              kubernetesServiceConnection: 'spike-tailspinspacegame-4434-mynamespace4434-1660096039426'
               namespace: 'default'
           - task: KubernetesManifest@0
             displayName: Deploy to Kubernetes cluster
             inputs:
               action: deploy
-              kubernetesServiceConnection: 'Kubernetes Cluster Connection'
+              kubernetesServiceConnection: 'spike-tailspinspacegame-4434-mynamespace4434-1660096039426'
               namespace: 'default'
               manifests: |
                 $(Pipeline.Workspace)/manifests/deployment.yml
